@@ -1,0 +1,17 @@
+# PyPI Configuration Template
+# Copy this to ~/.pypirc and fill in your credentials
+# DO NOT commit the actual .pypirc file with credentials!
+
+[distutils]
+index-servers =
+    pypi
+    testpypi
+
+[pypi]
+username = __token__
+password = pypi-YOUR_ACTUAL_TOKEN_HERE
+
+[testpypi]
+repository = https://test.pypi.org/legacy/
+username = __token__
+password = pypi-YOUR_TEST_TOKEN_HERE

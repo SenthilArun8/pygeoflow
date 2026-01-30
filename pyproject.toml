@@ -1,0 +1,118 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "provflow"
+version = "0.1.0"
+description = "Reproducible geospatial analysis framework with provenance tracking and CRS safety"
+authors = [
+    {name = "Senthil Kirthieswar", email = "senthilarun08@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = [
+    "gis",
+    "geospatial",
+    "geopandas",
+    "crs",
+    "coordinate-reference-system",
+    "spatial-analysis",
+    "geometry-validation",
+    "pipeline",
+    "reproducibility",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "geopandas>=0.14.0",
+    "shapely>=2.0.0",
+    "pyproj>=3.5.0",
+    "fiona>=1.9.0",
+    "networkx>=3.0",
+    "pydantic>=2.0.0",
+    "loguru>=0.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-benchmark>=4.0.0",
+    "hypothesis>=6.70.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+    "ipython>=8.0.0",
+    "jupyter>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/SenthilArun8/pyGeoflow"
+Documentation = "https://github.com/SenthilArun8/pyGeoflow#readme"
+Repository = "https://github.com/SenthilArun8/pyGeoflow"
+Issues = "https://github.com/SenthilArun8/pyGeoflow/issues"
+Changelog = "https://github.com/SenthilArun8/pyGeoflow/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["geoflow*"]
+exclude = ["tests*", "docs*", "examples*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = [
+    "--cov=geoflow",
+    "--cov-report=html",
+    "--cov-report=term",
+    "--verbose",
+]
+markers = [
+    "unit: Unit tests",
+    "integration: Integration tests",
+    "slow: Slow-running tests",
+]
+
+[tool.coverage.run]
+source = ["geoflow"]
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+include = '\.pyi?$'
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false

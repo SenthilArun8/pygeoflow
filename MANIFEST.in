@@ -1,0 +1,13 @@
+include README.md
+include LICENSE
+include pyproject.toml
+include pytest.ini
+recursive-include geoflow *.py
+recursive-exclude tests *
+recursive-exclude docs *
+recursive-exclude examples *
+recursive-exclude .git *
+recursive-exclude __pycache__ *
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude .DS_Store

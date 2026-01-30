@@ -1,0 +1,9 @@
+[run]
+source = geoflow
+omit =
+    */tests/*
+    */__pycache__/*
+
+[report]
+precision = 2
+show_missing = True

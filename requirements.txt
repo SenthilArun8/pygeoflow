@@ -1,0 +1,20 @@
+# Core dependencies
+geopandas>=0.14.0
+shapely>=2.0.0
+pyproj>=3.5.0
+fiona>=1.9.0
+networkx>=3.0
+pydantic>=2.0.0
+loguru>=0.7.0
+
+# Development dependencies (optional)
+# Uncomment the following lines if you need development tools:
+# pytest>=7.0.0
+# pytest-cov>=4.0.0
+# pytest-benchmark>=4.0.0
+# hypothesis>=6.70.0
+# black>=23.0.0
+# ruff>=0.1.0
+# mypy>=1.0.0
+# ipython>=8.0.0
+# jupyter>=1.0.0
